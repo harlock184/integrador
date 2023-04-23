@@ -1,0 +1,74 @@
+@font-face {
+    font-family: rick_and_morty;
+    src: url("../../multimedia/get_schwifty.ttf");
+}
+.card {
+    display: flex;
+    flex-direction: column;
+  
+    /* border: solid 2px black; */
+    font-family: rick_and_morty;
+    width: 230px;
+    height: 265px;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 225, 225, 0.5);
+    background-color: aliceblue;
+
+}
+.card:hover{
+    transform:scale(1.1);
+
+}
+/* .card button {
+ border :#06d6a0 solid;
+ border-radius: .05em;
+ margin:0.5em;
+} */
+.button:hover{
+/* 
+background-color: #ffd60a;
+border-radius: 0.5em;
+margin: 0.5em; */
+cursor: pointer;
+transform: scale(1.1);
+transition: all 0.5s ease;
+
+}
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+.button {
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+img{
+    width: 200px;
+    border-radius: 10px 10px 0 0;
+}
+.imageContainer{
+    display:flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    align-items: center;
+}
+.name{
+    
+    position: absolute;
+    background-color: rgba(0, 225, 225, 0.6);
+    margin-bottom: 0px;
+}
+.propsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    margin: 0px;
+    color: aqua;
+    border-radius: 0 0 20px 20px
+    
+}
+.propsContainer h2{
+    margin: 0;
+}
