@@ -28,7 +28,7 @@ export default function Cards({characters}) {//¿Por que se utiliza characters c
                   gender={gender}
                   origin={origin.name}
                   image={image}
-                  onClose={() => window.alert('Feder')}
+                  onClose={}
 
                   />
                   

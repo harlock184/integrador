@@ -8,7 +8,7 @@ export default function Card({id, name, status, species, gender, origin, image, 
       <div className={styles.card}>
          <div className={styles.card}></div>
          <div className ={styles.buttonContainer}>
-         <button onClick={onClose} className={styles.button}
+         <button onClick={() => onClose(id)} className={styles.button}
          >X</button>
          </div>
          <div className={styles.imageContainer}><img src={image} alt='Not found' />
