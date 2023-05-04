@@ -12,7 +12,7 @@ height: full;
 overflow: hidden;
 `
 
-export default function Cards({characters}) {//¿Por que se utiliza characters como nombre del array en vez de "default"?
+export default function Cards({characters, onClose}) {//¿Por que se utiliza characters como nombre del array en vez de "default"?
    return(
       <Div>
          {
@@ -28,7 +28,7 @@ export default function Cards({characters}) {//¿Por que se utiliza characters c
                   gender={gender}
                   origin={origin.name}
                   image={image}
-                  onClose={}
+                  onClose={onClose}
 
                   />
                   
