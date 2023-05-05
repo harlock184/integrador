@@ -2,14 +2,15 @@ import React from 'react';
 import './App.css';
 import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+// import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Form from './components/Form/Form';
 
 import Detail from './components/Detail/Detail';
 import About from "./components/About/About"
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 
 const email = "harlock184@gmail.com"
@@ -41,6 +42,10 @@ function App() {
    
       
    }
+   useEffect(()=>{
+      !access && navigate("/")
+
+   }, [access])
 
 
    function onSearch(id) {
@@ -64,7 +69,6 @@ function App() {
       location.pathname !=="/" && <Nav onSearch={onSearch} /> 
       }
   
-      <BrowserRouter>
 
 
       
@@ -74,7 +78,7 @@ function App() {
               <Route path="/detail/:id" element={<Detail />} />
               <Route path="/about" element={<About />} />
           </Routes>
-      </BrowserRouter>
+      
    </div>
 
      
