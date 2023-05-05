@@ -4,12 +4,14 @@ import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
 import { useState } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import Form from './components/Form/Form';
 
 import Detail from './components/Detail/Detail';
 import About from "./components/About/About"
 
-
+const email = "harlock184@gmail.com"
+const password = "feder1234"
 
 const example = {
    id: 1,
@@ -25,7 +27,19 @@ const example = {
 };
 
 function App() {
+   const location = useLocation();
    const [characters, setCharacters] = useState([]);
+   const [access, setAccess]= useState(false);
+   const navigate = useNavigate();
+   const login =(userData)=>{
+      if (userData.password === password && userData.email === email) {
+         setAccess(true);
+         navigate('/home');
+      }
+   
+      
+   }
+
 
    function onSearch(id) {
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -44,16 +58,26 @@ function App() {
 
    return (
       <div className='App'>
-         <Router>
-            <Nav onSearch={onSearch} />
-            <Routes>
-               <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
-               <Route path="/detail/:id" element={<Detail />} />
-               <Route path="/about" element={<About />} />
-            </Routes>
-         </Router>
-      </div>
+      {
+      location.pathname !=="/" && <Nav onSearch={onSearch} /> 
+      }
+  
+      <Router>
+
+      
+          <Routes>
+              <Route path="/"element={<Form login={login}/>}/>
+              <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+              <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/about" element={<About />} />
+          </Routes>
+      </Router>
+   </div>
+
+     
    );
 }
 
 export default App;
+
+
