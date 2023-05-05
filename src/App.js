@@ -9,6 +9,8 @@ import Form from './components/Form/Form';
 
 import Detail from './components/Detail/Detail';
 import About from "./components/About/About"
+import { BrowserRouter } from 'react-router-dom';
+
 
 const email = "harlock184@gmail.com"
 const password = "feder1234"
@@ -62,7 +64,8 @@ function App() {
       location.pathname !=="/" && <Nav onSearch={onSearch} /> 
       }
   
-      <Router>
+      <BrowserRouter>
+
 
       
           <Routes>
@@ -71,7 +74,7 @@ function App() {
               <Route path="/detail/:id" element={<Detail />} />
               <Route path="/about" element={<About />} />
           </Routes>
-      </Router>
+      </BrowserRouter>
    </div>
 
      
