@@ -24,8 +24,8 @@ const Form =({login})=>{//revisar esto
     }
     const handleSubmit =(event)=>{
         event.preventDefault();
-        // login(userData);
-        login(userData.email, userData.password)
+        login(userData);
+        // login(userData.email, userData.password)
 
     }
 
